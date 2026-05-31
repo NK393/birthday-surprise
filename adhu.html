@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mine ❤️</title>
+<title>Memories 🎥</title>
 
 <style>
 body{
@@ -16,39 +16,39 @@ body{
 
 h1{
     margin:20px 0;
-    color:pink;
+    color:#ffcc80;
 }
 
 /* GRID */
 .gallery{
     display:grid;
-    grid-template-columns:repeat(auto-fill, minmax(110px, 1fr));
-    gap:6px;
+    grid-template-columns:repeat(auto-fill, minmax(220px, 1fr));
+    gap:10px;
     padding:10px;
 }
 
-/* SQUARE IMAGES */
-.gallery img{
+/* VIDEO BOX */
+.video-box{
     width:100%;
     aspect-ratio:1/1;
+    border-radius:12px;
+    overflow:hidden;
+    background:black;
+}
+
+.video-box video{
+    width:100%;
+    height:100%;
     object-fit:cover;
-    border-radius:10px;
-    display:block;
-    transition:0.3s ease;
 }
 
-/* hover effect */
-.gallery img:hover{
-    transform:scale(1.05);
-}
-
-/* QUOTE */
+/* NOTE */
 .quote{
-    margin:25px auto;
+    margin:30px auto;
     padding:15px;
     max-width:700px;
     font-size:18px;
-    color:#ffb6c1;
+    color:#ffcc80;
     background:rgba(255,255,255,0.05);
     border-radius:12px;
     line-height:1.6;
@@ -58,52 +58,80 @@ h1{
 
 <body>
 
-<h1>💕 Mine 💕</h1>
+<h1>🎥 Memories 🎥</h1>
 
-<div class="gallery">
-
-<img src="images/Adhu/image1.jpg">
-<img src="images/Adhu/image5.jpg">
-<img src="images/Adhu/image6.jpg">
-<img src="images/Adhu/image7.jpg">
-<img src="images/Adhu/image8.jpg">
-<img src="images/Adhu/image9.jpg">
-
-
-<img src="images/Adhu/image11.jpg">
-<img src="images/Adhu/image12.jpg">
-<img src="images/Adhu/image13.jpg">
-<img src="images/Adhu/image14.jpg">
-<img src="images/Adhu/image15.jpg">
-<img src="images/Adhu/image16.jpg">
-<img src="images/Adhu/image17.jpg">
-<img src="images/Adhu/image18.jpg">
-<img src="images/Adhu/image19.jpg">
-<img src="images/Adhu/image20.jpg">
-
-<img src="images/Adhu/image21.jpg">
-<img src="images/Adhu/image22.jpg">
-<img src="images/Adhu/image23.jpg">
-<img src="images/Adhu/image24.jpg">
-<img src="images/Adhu/image25.jpg">
-<img src="images/Adhu/image26.jpg">
-<img src="images/Adhu/image27.jpg">
-<img src="images/Adhu/image28.jpg">
-<img src="images/Adhu/image29.jpg">
-<img src="images/Adhu/image30.jpg">
-
-<img src="images/Adhu/image31.jpg">
-<img src="images/Adhu/image32.jpg">
-<img src="images/Adhu/image33.jpg">
-<img src="images/Adhu/image34.jpg">
-<img src="images/Adhu/image35.jpg">
-<img src="images/Adhu/image36.jpg">
-
-</div>
+<div class="gallery" id="gallery"></div>
 
 <div class="quote">
-💌 Every picture here is not just a memory, but a piece of my heart ❤️
+💛 Every memory is stored here forever ✨
 </div>
+
+<script>
+const gallery = document.getElementById("gallery");
+
+const folder = "videos/";
+
+const videoFiles = [
+"Snapchat-1001146950.mp4",
+"Snapchat-1002190874.mp4",
+"Snapchat-101608792.mp4",
+"Snapchat-1098629231.mp4",
+"Snapchat-1173342661.mp4",
+"Snapchat-119422207.mp4",
+"Snapchat-1419801202.mp4",
+"Snapchat-1585137724.mp4",
+"Snapchat-1614636833.mp4",
+"Snapchat-1622430196.mp4",
+"Snapchat-1639399239.mp4",
+"Snapchat-1677696032.mp4",
+"Snapchat-1799171802.mp4",
+"Snapchat-1861700924.mp4",
+"Snapchat-190828685.mp4",
+
+"Snapchat-1928663272.mp4",
+"Snapchat-193174506.mp4",
+"Snapchat-1941128029.mp4",
+"Snapchat-1981405655.mp4",
+"Snapchat-1994641368.mp4",
+"Snapchat-2032276810.mp4",
+"Snapchat-207838568.mp4",
+"Snapchat-212389656.mp4",
+"Snapchat-391245348.mp4",
+"Snapchat-648076076.mp4",
+"Snapchat-662048646.mp4",
+
+"VID-20240730-WA0002.mp4",
+"VID-20241209-WA0014.mp4",
+"VID-20250216-WA0008.mp4",
+"VID-20250218_093816_057.mp4",
+"VID-20250315-WA0003.mp4",
+"VID-20250622-WA00088.mp4",
+"VID-20250902-WA0041.mp4",
+"VID-20250902-WA0047.mp4",
+"VID-20250902-WA0064.mp4",
+"VID-20250902-WA0080.mp4",
+"VID-20250902-WA0081.mp4",
+"VID-20250902-WA0083.mp4"
+];
+
+videoFiles.forEach(file => {
+
+    const div = document.createElement("div");
+    div.className = "video-box";
+
+    const video = document.createElement("video");
+    video.controls = true;
+    video.src = folder + file;
+
+    // hide if broken
+    video.onerror = () => {
+        div.style.display = "none";
+    };
+
+    div.appendChild(video);
+    gallery.appendChild(div);
+});
+</script>
 
 </body>
 </html>
