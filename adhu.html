@@ -1,25 +1,221 @@
-<script>
-const gallery = document.getElementById("gallery");
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mine ❤️</title>
 
-const totalImages = 36;
-const folder = "images/Adhu/";
-
-for(let i = 1; i <= totalImages; i++){
-
-    const div = document.createElement("div");
-    div.className = "photo";
-
-    const img = document.createElement("img");
-
-    img.src = folder + "image" + i + ".jpg";
-    img.loading = "lazy";
-    img.decoding = "async";
-
-    img.onload = () => {
-        img.classList.add("loaded");
-    };
-
-    div.appendChild(img);
-    gallery.appendChild(div);
+<style>
+body{
+    margin:0;
+    font-family: Arial, sans-serif;
+    background:#111;
+    color:white;
+    text-align:center;
 }
-</script>
+
+h1{
+    margin:20px 0;
+    color:pink;
+}
+
+/* GRID */
+.gallery{
+    display:grid;
+    grid-template-columns:repeat(auto-fill, minmax(110px, 1fr));
+    gap:6px;
+    padding:10px;
+}
+
+/* SQUARE IMAGE */
+.gallery img{
+    width:100%;
+    aspect-ratio:1/1;
+    object-fit:cover;
+    border-radius:10px;
+    display:block;
+    transition:0.3s ease;
+}
+
+.gallery img:hover{
+    transform:scale(1.05);
+}
+
+/* QUOTE */
+.quote{
+    margin:25px auto;
+    padding:15px;
+    max-width:700px;
+    font-size:18px;
+    color:#ffb6c1;
+    background:rgba(255,255,255,0.05);
+    border-radius:12px;
+    line-height:1.6;
+}
+</style>
+</head>
+
+<body>
+
+<h1>💕 Mine 💕</h1>
+
+<div class="gallery">
+
+<img src="images/Adhu/image1.jpg">
+<img src="images/Adhu/image2.jpg">
+<img src="images/Adhu/image3.jpg">
+<img src="images/Adhu/image4.jpg">
+<img src="images/Adhu/image5.jpg">
+<img src="images/Adhu/image6.jpg">
+<img src="images/Adhu/image7.jpg">
+<img src="images/Adhu/image8.jpg">
+<img src="images/Adhu/image9.jpg">
+<img src="images/Adhu/image10.jpg">
+
+<img src="images/Adhu/image11.jpg">
+<img src="images/Adhu/image12.jpg">
+<img src="images/Adhu/image13.jpg">
+<img src="images/Adhu/image14.jpg">
+<img src="images/Adhu/image15.jpg">
+<img src="images/Adhu/image16.jpg">
+<img src="images/Adhu/image17.jpg">
+<img src="images/Adhu/image18.jpg">
+<img src="images/Adhu/image19.jpg">
+<img src="images/Adhu/image20.jpg">
+
+<img src="images/Adhu/image21.jpg">
+<img src="images/Adhu/image22.jpg">
+<img src="images/Adhu/image23.jpg">
+<img src="images/Adhu/image24.jpg">
+<img src="images/Adhu/image25.jpg">
+<img src="images/Adhu/image26.jpg">
+<img src="images/Adhu/image27.jpg">
+<img src="images/Adhu/image28.jpg">
+<img src="images/Adhu/image29.jpg">
+<img src="images/Adhu/image30.jpg">
+
+<img src="images/Adhu/image31.jpg">
+<img src="images/Adhu/image32.jpg">
+<img src="images/Adhu/image33.jpg">
+<img src="images/Adhu/image34.jpg">
+<img src="images/Adhu/image35.jpg">
+<img src="images/Adhu/image36.jpg">
+
+</div>
+
+<div class="quote">
+💌 <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mine ❤️</title>
+
+<style>
+body{
+    margin:0;
+    font-family: Arial, sans-serif;
+    background:#111;
+    color:white;
+    text-align:center;
+}
+
+h1{
+    margin:20px 0;
+    color:pink;
+}
+
+/* GRID */
+.gallery{
+    display:grid;
+    grid-template-columns:repeat(auto-fill, minmax(110px, 1fr));
+    gap:6px;
+    padding:10px;
+}
+
+/* SQUARE IMAGE */
+.gallery img{
+    width:100%;
+    aspect-ratio:1/1;
+    object-fit:cover;
+    border-radius:10px;
+    display:block;
+    transition:0.3s ease;
+}
+
+.gallery img:hover{
+    transform:scale(1.05);
+}
+
+/* QUOTE */
+.quote{
+    margin:25px auto;
+    padding:15px;
+    max-width:700px;
+    font-size:18px;
+    color:#ffb6c1;
+    background:rgba(255,255,255,0.05);
+    border-radius:12px;
+    line-height:1.6;
+}
+</style>
+</head>
+
+<body>
+
+<h1>💕 Mine 💕</h1>
+
+<div class="gallery">
+
+<img src="images/Adhu/image1.jpg">
+<img src="images/Adhu/image2.JPG">
+<img src="images/Adhu/image3.JPG">
+<img src="images/Adhu/image4.JPG">
+<img src="images/Adhu/image5.jpg">
+<img src="images/Adhu/image6.jpg">
+<img src="images/Adhu/image7.jpg">
+<img src="images/Adhu/image8.jpg">
+<img src="images/Adhu/image9.jpg">
+<img src="images/Adhu/image10.JPG">
+
+<img src="images/Adhu/image11.jpg">
+<img src="images/Adhu/image12.jpg">
+<img src="images/Adhu/image13.jpg">
+<img src="images/Adhu/image14.jpg">
+<img src="images/Adhu/image15.jpg">
+<img src="images/Adhu/image16.jpg">
+<img src="images/Adhu/image17.jpg">
+<img src="images/Adhu/image18.jpg">
+<img src="images/Adhu/image19.jpg">
+<img src="images/Adhu/image20.jpg">
+
+<img src="images/Adhu/image21.jpg">
+<img src="images/Adhu/image22.jpg">
+<img src="images/Adhu/image23.jpg">
+<img src="images/Adhu/image24.jpg">
+<img src="images/Adhu/image25.jpg">
+<img src="images/Adhu/image26.jpg">
+<img src="images/Adhu/image27.jpg">
+<img src="images/Adhu/image28.jpg">
+<img src="images/Adhu/image29.jpg">
+<img src="images/Adhu/image30.jpg">
+
+<img src="images/Adhu/image31.jpg">
+<img src="images/Adhu/image32.jpg">
+<img src="images/Adhu/image33.jpg">
+<img src="images/Adhu/image34.jpg">
+<img src="images/Adhu/image35.jpg">
+<img src="images/Adhu/image36.jpg">
+
+</div>
+
+<div class="quote">
+💌 Every picture here is not just a memory, but a piece of my heart, where I have seen every shade of you ❤️
+</div>
+
+</body>
+</html> ❤️
+</div>
+
+</body>
+</html>
