@@ -1,88 +1,79 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Us Together ❤️</title>
 
 <style>
-
 body{
-margin:0;
-font-family:Georgia, serif;
-background:
-linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.9)),
-url("images/background.jpg");
-background-size:cover;
-color:white;
-text-align:center;
-padding:20px;
+    margin:0;
+    font-family: Arial, sans-serif;
+    background:#111;
+    color:white;
+    text-align:center;
 }
 
 h1{
-color:#ffb6c1;
-text-shadow:0 0 10px #ff4f88;
+    margin:20px 0;
+    color:pink;
 }
 
 .gallery{
-display:grid;
-grid-template-columns:repeat(auto-fit, minmax(160px, 1fr));
-gap:12px;
-margin-top:20px;
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(180px, 1fr));
+    gap:10px;
+    padding:10px;
 }
 
 .gallery img{
-width:100%;
-height:220px;
-object-fit:cover;
-border-radius:15px;
-box-shadow:0 0 15px rgba(255,105,180,0.4);
-transition:0.3s;
+    width:100%;
+    height:220px;
+    object-fit:cover;
+    border-radius:12px;
+    transition:0.3s ease;
 }
 
 .gallery img:hover{
-transform:scale(1.05);
+    transform:scale(1.05);
 }
-
-p{
-margin-top:20px;
-font-size:18px;
-color:#ffe6ef;
-}
-
 </style>
 </head>
 
 <body>
 
-<h1>💕 Our Story 💕</h1>
+<h1>💕 Our Memories 💕</h1>
 
-<div class="gallery" id="gallery"></div>
+<div class="gallery">
 
-<p>The day became beautiful because you were in it ❤️</p>
+<img src="images/us/IMG-20251005-WA0006.jpg">
+<img src="images/us/1000108695.jpg">
+<img src="images/us/1000111514.png">
+<img src="images/us/1000112023.jpg">
+<img src="images/us/20241207_184705.jpg">
+<img src="images/us/IMG-20250329-WA0026.jpg">
+<img src="images/us/IMG-20250329-WA0026.jpg">
+<img src="images/us/IMG-20250902-WA0037.jpg">
+<img src="images/us/IMG-20251005-WA0004.jpg">
+<img src="images/us/IMG-20260301-WA0000.jpg">
+<img src="images/us/IMG-20260301-WA0003.jpg">
+<img src="images/us/IMG-20260531-WA0001.jpg">
+<img src="images/us/IMG-20260531-WA0003.jpg">
+<img src="images/us/IMG-20260531-WA0005.jpg">
+<img src="images/us/IMG_0715.JPG">
+<img src="images/us/IMG_3756.JPG">
+<img src="images/us/IMG_3757.JPG">
+<img src="images/us/Snapchat-1014114886.jpg">
+<img src="images/us/Snapchat-1019926560.jpg">
+<img src="images/us/Snapchat-1036048160.jpg">
+<img src="images/us/Snapchat-1494370908.jpg">
+<img src="images/us/Snapchat-1614325291.jpg">
+<img src="images/us/Snapchat-1684461269.jpg">
+<img src="images/us/Snapchat-219538106.jpg">
+<img src="images/us/Snapchat-717060207.jpg">
+<img src="images/us/Snapchat-838261212.jpg">
 
-<script>
-
-const images = [
-
-/* 👉 PASTE YOUR EXACT FILENAMES HERE (NO RENAMING NEEDED) */
-"20241207_184705.jpg",
-"IMG_1.jpg",
-"IMG_2.jpg",
-"IMG_3.jpg",
-"IMG_4.jpg",
-"IMG_5.jpg"
-
-];
-
-const gallery = document.getElementById("gallery");
-
-for(let i=0;i<images.length;i++){
-let img = document.createElement("img");
-img.src = "images/us/" + images[i];
-gallery.appendChild(img);
-}
-
-</script>
+</div>
 
 </body>
 </html>
