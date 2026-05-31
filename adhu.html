@@ -22,42 +22,44 @@ h1{
 /* GRID */
 .gallery{
     display:grid;
-    grid-template-columns:repeat(auto-fit, minmax(120px, 1fr));
-    gap:8px;
+    grid-template-columns:repeat(auto-fill, minmax(110px, 1fr));
+    gap:6px;
     padding:10px;
 }
 
-/* SQUARE CARD */
+/* PHOTO BLOCK */
 .photo{
     display:flex;
     flex-direction:column;
 }
 
-/* PERFECT SQUARE IMAGE */
+/* 🔥 PERFECT SQUARE IMAGE */
 .photo img{
     width:100%;
-    aspect-ratio:1/1;   /* 🔥 THIS MAKES IT SQUARE */
+    aspect-ratio:1/1;   /* KEY FOR SQUARE */
     object-fit:cover;
-    border-radius:12px;
+    display:block;
+    border-radius:10px;
+
     filter:blur(6px);
     transition:0.3s ease;
 }
 
-/* loaded effect */
+/* when loaded */
 .photo img.loaded{
     filter:blur(0);
 }
 
-/* hover */
+/* hover effect */
 .photo img:hover{
-    transform:scale(1.03);
+    transform:scale(1.05);
 }
 
 /* caption */
 .caption{
-    font-size:12px;
+    font-size:11px;
     color:#ffb6c1;
-    margin-top:4px;
+    margin-top:3px;
 }
 
 /* quote */
@@ -98,7 +100,7 @@ for(let i = 1; i <= totalImages; i++){
 
     const img = document.createElement("img");
 
-    // 🔥 ensures proper ordered loading
+    // ordered loading
     img.src = folder + "image" + i + ".jpg";
 
     img.loading = "lazy";
