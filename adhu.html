@@ -27,30 +27,40 @@ h1{
     padding:10px;
 }
 
+/* CARD */
+.photo{
+    display:flex;
+    flex-direction:column;
+}
+
 /* IMAGE */
-.gallery img{
+.photo img{
     width:100%;
     height:190px;
     object-fit:cover;
     border-radius:12px;
 
-    /* performance */
     transform:translateZ(0);
     will-change: transform;
 
-    /* loading effect */
     filter:blur(8px);
     transition:0.4s ease;
 }
 
-/* when loaded */
-.gallery img.loaded{
+.photo img.loaded{
     filter:blur(0);
 }
 
-/* hover */
-.gallery img:hover{
+.photo img:hover{
     transform:scale(1.03);
+}
+
+/* CAPTION */
+.caption{
+    margin-top:4px;
+    font-size:13px;
+    color:#ffb6c1;
+    padding:4px;
 }
 
 /* QUOTE */
@@ -73,40 +83,51 @@ h1{
 
 <div class="gallery">
 
-<img src="images/Adhu/image1.jpg" loading="lazy" decoding="async">
-<img src="images/Adhu/image2.JPG" loading="lazy" decoding="async">
-<img src="images/Adhu/image3.JPG" loading="lazy" decoding="async">
-<img src="images/Adhu/image4.JPG" loading="lazy" decoding="async">
-<img src="images/Adhu/image5.jpg" loading="lazy" decoding="async">
-<img src="images/Adhu/image6.jpg" loading="lazy" decoding="async">
-<img src="images/Adhu/image7.jpg" loading="lazy" decoding="async">
-<img src="images/Adhu/image8.jpg" loading="lazy" decoding="async">
-<img src="images/Adhu/image9.jpg" loading="lazy" decoding="async">
-<img src="images/Adhu/image10.JPG" loading="lazy" decoding="async">
+<!-- 30 images with dummy captions -->
 
-<img src="images/Adhu/image11.jpg" loading="lazy" decoding="async">
-<img src="images/Adhu/image12.jpg" loading="lazy" decoding="async">
-<img src="images/Adhu/image13.jpg" loading="lazy" decoding="async">
-<img src="images/Adhu/image14.jpg" loading="lazy" decoding="async">
-<img src="images/Adhu/image15.jpg" loading="lazy" decoding="async">
-<img src="images/Adhu/image16.jpg" loading="lazy" decoding="async">
-<img src="images/Adhu/image17.jpg" loading="lazy" decoding="async">
-<img src="images/Adhu/image18.jpg" loading="lazy" decoding="async">
-<img src="images/Adhu/image19.jpg" loading="lazy" decoding="async">
-<img src="images/Adhu/image20.jpg" loading="lazy" decoding="async">
+<div class="photo"><img src="images/Adhu/image1.jpg" loading="lazy" decoding="async"><div class="caption">Memory 1 - 'Lubber pandhu Date'  it was!    </div></div>
+<div class="photo"><img src="images/Adhu/image2.JPG" loading="lazy" decoding="async"><div class="caption"></div></div>
+<div class="photo"><img src="images/Adhu/image3.JPG" loading="lazy" decoding="async"><div class="caption"></div></div>
+<div class="photo"><img src="images/Adhu/image4.JPG" loading="lazy" decoding="async"><div class="caption"></div>
+<div class="photo"><img src="images/Adhu/image5.jpg" loading="lazy" decoding="async"><div class="caption"></div>
 
-<img src="images/Adhu/image21.jpg" loading="lazy" decoding="async">
-<img src="images/Adhu/image22.jpg" loading="lazy" decoding="async">
-<img src="images/Adhu/image23.jpg" loading="lazy" decoding="async">
-<img src="images/Adhu/image24.jpg" loading="lazy" decoding="async">
-<img src="images/Adhu/image25.jpg" loading="lazy" decoding="async">
-<img src="images/Adhu/image26.jpg" loading="lazy" decoding="async">
-<img src="images/Adhu/image27.jpg" loading="lazy" decoding="async">
-<img src="images/Adhu/image28.jpg" loading="lazy" decoding="async">
-<img src="images/Adhu/image29.jpg" loading="lazy" decoding="async">
-<img src="images/Adhu/image30.jpg" loading="lazy" decoding="async">
+<div class="photo"><img src="images/Adhu/image6.jpg" loading="lazy" decoding="async"><div class="caption"></div>
+<div class="photo"><img src="images/Adhu/image7.jpg" loading="lazy" decoding="async"><div class="caption"></div>
+<div class="photo"><img src="images/Adhu/image8.jpg" loading="lazy" decoding="async"><div class="caption"></div>
+<div class="photo"><img src="images/Adhu/image9.jpg" loading="lazy" decoding="async"><div class="caption"></div>
+<div class="photo"><img src="images/Adhu/image10.JPG" loading="lazy" decoding="async"><div class="caption"></div>
 
+<div class="photo"><img src="images/Adhu/image11.jpg" loading="lazy" decoding="async"><div class="caption">The most hated</div></div>
+<div class="photo"><img src="images/Adhu/image12.jpg" loading="lazy" decoding="async"><div class="caption"></div>
+<div class="photo"><img src="images/Adhu/image13.jpg" loading="lazy" decoding="async"><div class="caption"></div>
+<div class="photo"><img src="images/Adhu/image14.jpg" loading="lazy" decoding="async"><div class="caption">More Love </div></div>
+<div class="photo"><img src="images/Adhu/image15.jpg" loading="lazy" decoding="async"><div class="caption"></div>
+
+<div class="photo"><img src="images/Adhu/image16.jpg" loading="lazy" decoding="async"><div class="caption"></div>
+<div class="photo"><img src="images/Adhu/image17.jpg" loading="lazy" decoding="async"><div class="caption"></div>
+<div class="photo"><img src="images/Adhu/image18.jpg" loading="lazy" decoding="async"><div class="caption"></div>
+<div class="photo"><img src="images/Adhu/image19.jpg" loading="lazy" decoding="async"><div class="caption"></div>
+<div class="photo"><img src="images/Adhu/image20.jpg" loading="lazy" decoding="async"><div class="caption"></div>
+
+<div class="photo"><img src="images/Adhu/image21.jpg" loading="lazy" decoding="async"><div class="caption"></div>
+<div class="photo"><img src="images/Adhu/image22.jpg" loading="lazy" decoding="async"><div class="caption"></div>
+<div class="photo"><img src="images/Adhu/image23.jpg" loading="lazy" decoding="async"><div class="caption">Cutieee</div></div>
+<div class="photo"><img src="images/Adhu/image24.jpg" loading="lazy" decoding="async"><div class="caption"></div>
+<div class="photo"><img src="images/Adhu/image25.jpg" loading="lazy" decoding="async"><div class="caption"></div>
+
+<div class="photo"><img src="images/Adhu/image26.jpg" loading="lazy" decoding="async"><div class="caption"></div>
+<div class="photo"><img src="images/Adhu/image27.jpg" loading="lazy" decoding="async"><div class="caption"></div>
+<div class="photo"><img src="images/Adhu/image28.jpg" loading="lazy" decoding="async"><div class="caption"></div>
+<div class="photo"><img src="images/Adhu/image29.jpg" loading="lazy" decoding="async"><div class="caption"></div>
+<div class="photo"><img src="images/Adhu/image30.jpg" loading="lazy" decoding="async"><div class="caption">My favourite</div>
+<div class="photo"><img src="images/Adhu/image31.jpg" loading="lazy" decoding="async"><div class="caption"></div>
+<div class="photo"><img src="images/Adhu/image32.jpg" loading="lazy" decoding="async"><div class="caption"></div>
+<div class="photo"><img src="images/Adhu/image33.jpg" loading="lazy" decoding="async"><div class="caption">Best Times</div>
+<div class="photo"><img src="images/Adhu/image34.jpg" loading="lazy" decoding="async"><div class="caption"></div>
+<div class="photo"><img src="images/Adhu/image35.jpg" loading="lazy" decoding="async"><div class="caption"></div>
+<div class="photo"><img src="images/Adhu/image36.jpg" loading="lazy" decoding="async"><div class="caption"></div>
 </div>
+
 <div class="quote">
 💌  
 Every picture here is not just a memory, but a piece of my heart, where I have seen every shade of you. ❤️
