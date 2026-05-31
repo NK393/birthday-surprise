@@ -3,17 +3,86 @@
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Us Together ❤️</title>
+
+<style>
+
+body{
+margin:0;
+font-family:Georgia, serif;
+background:
+linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.9)),
+url("images/background.jpg");
+background-size:cover;
+color:white;
+text-align:center;
+padding:20px;
+}
+
+h1{
+color:#ffb6c1;
+text-shadow:0 0 10px #ff4f88;
+}
+
+.gallery{
+display:grid;
+grid-template-columns:repeat(auto-fit, minmax(160px, 1fr));
+gap:12px;
+margin-top:20px;
+}
+
+.gallery img{
+width:100%;
+height:220px;
+object-fit:cover;
+border-radius:15px;
+box-shadow:0 0 15px rgba(255,105,180,0.4);
+transition:0.3s;
+}
+
+.gallery img:hover{
+transform:scale(1.05);
+}
+
+p{
+margin-top:20px;
+font-size:18px;
+color:#ffe6ef;
+}
+
+</style>
 </head>
 
 <body>
 
 <h1>💕 Our Story 💕</h1>
 
-<img src="images/us/20241207_184705.jpg" width="100%">
+<div class="gallery" id="gallery"></div>
 
-<p>
-The day became beautiful because you were in it. ❤️
-</p>
+<p>The day became beautiful because you were in it ❤️</p>
+
+<script>
+
+const images = [
+
+/* 👉 PASTE YOUR EXACT FILENAMES HERE (NO RENAMING NEEDED) */
+"20241207_184705.jpg",
+"IMG_1.jpg",
+"IMG_2.jpg",
+"IMG_3.jpg",
+"IMG_4.jpg",
+"IMG_5.jpg"
+
+];
+
+const gallery = document.getElementById("gallery");
+
+for(let i=0;i<images.length;i++){
+let img = document.createElement("img");
+img.src = "images/us/" + images[i];
+gallery.appendChild(img);
+}
+
+</script>
 
 </body>
 </html>
