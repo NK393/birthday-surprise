@@ -19,7 +19,6 @@ h1{
     color:#ffcc80;
 }
 
-/* GRID */
 .gallery{
     display:grid;
     grid-template-columns:repeat(auto-fill, minmax(220px, 1fr));
@@ -27,7 +26,6 @@ h1{
     padding:10px;
 }
 
-/* VIDEO BOX */
 .video-box{
     width:100%;
     aspect-ratio:1/1;
@@ -42,7 +40,6 @@ h1{
     object-fit:cover;
 }
 
-/* NOTE */
 .quote{
     margin:30px auto;
     padding:15px;
@@ -51,7 +48,6 @@ h1{
     color:#ffcc80;
     background:rgba(255,255,255,0.05);
     border-radius:12px;
-    line-height:1.6;
 }
 </style>
 </head>
@@ -63,7 +59,7 @@ h1{
 <div class="gallery" id="gallery"></div>
 
 <div class="quote">
-💛 Every memory is stored here forever ✨
+💛 Every memory stays here forever ✨
 </div>
 
 <script>
@@ -87,7 +83,6 @@ const videoFiles = [
 "Snapchat-1799171802.mp4",
 "Snapchat-1861700924.mp4",
 "Snapchat-190828685.mp4",
-
 "Snapchat-1928663272.mp4",
 "Snapchat-193174506.mp4",
 "Snapchat-1941128029.mp4",
@@ -99,7 +94,6 @@ const videoFiles = [
 "Snapchat-391245348.mp4",
 "Snapchat-648076076.mp4",
 "Snapchat-662048646.mp4",
-
 "VID-20240730-WA0002.mp4",
 "VID-20241209-WA0014.mp4",
 "VID-20250216-WA0008.mp4",
@@ -115,7 +109,6 @@ const videoFiles = [
 ];
 
 videoFiles.forEach(file => {
-
     const div = document.createElement("div");
     div.className = "video-box";
 
@@ -123,7 +116,6 @@ videoFiles.forEach(file => {
     video.controls = true;
     video.src = folder + file;
 
-    // hide if broken
     video.onerror = () => {
         div.style.display = "none";
     };
