@@ -27,16 +27,15 @@ h1{
     padding:10px;
 }
 
-/* PHOTO BLOCK */
+/* PHOTO */
 .photo{
     display:flex;
-    flex-direction:column;
 }
 
-/* 🔥 PERFECT SQUARE IMAGE */
+/* SQUARE IMAGE */
 .photo img{
     width:100%;
-    aspect-ratio:1/1;   /* KEY FOR SQUARE */
+    aspect-ratio:1/1;
     object-fit:cover;
     display:block;
     border-radius:10px;
@@ -45,76 +44,11 @@ h1{
     transition:0.3s ease;
 }
 
-/* when loaded */
+/* loaded effect */
 .photo img.loaded{
     filter:blur(0);
 }
 
 /* hover effect */
 .photo img:hover{
-    transform:scale(1.05);
-}
-
-/* caption */
-.caption{
-    font-size:11px;
-    color:#ffb6c1;
-    margin-top:3px;
-}
-
-/* quote */
-.quote{
-    margin:25px auto;
-    padding:15px;
-    max-width:700px;
-    font-size:18px;
-    color:#ffb6c1;
-    background:rgba(255,255,255,0.05);
-    border-radius:12px;
-    line-height:1.6;
-}
-</style>
-</head>
-
-<body>
-
-<h1>💕 Mine 💕</h1>
-
-<div class="gallery" id="gallery"></div>
-
-<div class="quote">
-💌  
-Every picture here is not just a memory, but a piece of my heart, where I have seen every shade of you. ❤️
-</div>
-
-<script>
-const gallery = document.getElementById("gallery");
-
-const totalImages = 36;
-const folder = "images/Adhu/";
-
-for(let i = 1; i <= totalImages; i++){
-
-    const div = document.createElement("div");
-    div.className = "photo";
-
-    const img = document.createElement("img");
-
-    // ordered loading
-    img.src = folder + "image" + i + ".jpg";
-
-    img.loading = "lazy";
-    img.decoding = "async";
-
-    img.onload = () => {
-        img.classList.add("loaded");
-    };
-
-    div.appendChild(img);
-    div.appendChild(caption);
-    gallery.appendChild(div);
-}
-</script>
-
-</body>
-</html>
+    transform
