@@ -1,121 +1,51 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Happy Birthday Adhu ❤️</title>
+<title>Our World ❤️</title>
 
 <style>
 
-*{
+body{
 margin:0;
-padding:0;
-box-sizing:border-box;
+font-family:Georgia, serif;
+background:black;
+color:white;
+text-align:center;
 }
 
-body{
-background:
-linear-gradient(rgba(0,0,0,0.35),rgba(0,0,0,0.45)),
-url('images/Background.jpg');
+/* music fixed */
+audio{
+position:fixed;
+top:10px;
+left:10px;
+z-index:999;
+}
 
-background-size:cover;
-background-position:center;
-background-repeat:no-repeat;
-background-attachment:fixed;
-
-font-family:Georgia, serif;
-min-height:100vh;
-
-display:flex;
-justify-content:center;
-align-items:center;
-
+/* menu */
+.menu{
 padding:20px;
 }
 
-.glass-card{
-width:100%;
-max-width:550px;
-background:rgba(255,255,255,0.12);
-backdrop-filter:blur(12px);
-border:1px solid rgba(255,255,255,0.2);
-border-radius:30px;
-padding:35px;
-text-align:center;
-color:white;
-box-shadow:0 0 40px rgba(255,105,180,0.35);
-}
-
-.title{
-font-size:52px;
-color:#ffdbe8;
-text-shadow:0 0 15px #ff6b9d;
-}
-
-.name{
-font-size:70px;
-font-style:italic;
-margin:10px 0 20px;
-text-shadow:0 0 20px #ff6b9d;
-}
-
-.subtitle{
-font-size:20px;
-margin-bottom:25px;
-}
-
-.counter{
-font-size:80px;
-font-weight:bold;
-color:#ffdbe8;
-text-shadow:0 0 15px #ff6b9d;
-}
-
-.days{
-font-size:24px;
-margin-bottom:25px;
-}
-
-input{
-width:100%;
+button{
+display:block;
+width:80%;
+margin:15px auto;
 padding:15px;
-font-size:18px;
+font-size:20px;
 border:none;
 border-radius:15px;
-}
-
-button{
-margin-top:20px;
-padding:15px 40px;
-border:none;
-border-radius:20px;
 background:#ff4f88;
 color:white;
-font-size:20px;
 cursor:pointer;
-box-shadow:0 0 20px #ff4f88;
+box-shadow:0 0 15px #ff4f88;
 }
 
-button:hover{
-transform:scale(1.05);
-}
-
-.quote{
-margin-top:30px;
-font-size:22px;
-font-style:italic;
-color:#ffe6ef;
-}
-
-.heart{
-font-size:40px;
-margin-top:20px;
-}
-
-/* second page */
-.hidden{
-display:none;
+iframe{
+width:100%;
+height:90vh;
+border:none;
+margin-top:10px;
 }
 
 </style>
@@ -123,83 +53,32 @@ display:none;
 
 <body>
 
-<div class="glass-card">
-
-<!-- AUDIO (WILL PLAY CONTINUOUSLY) -->
+<!-- 🎵 MUSIC NEVER STOPS HERE -->
 <audio id="bgMusic" controls loop>
 <source src="music/Un_Vizhigalil.mp3" type="audio/mpeg">
 </audio>
 
-<!-- PAGE 1 -->
-<div id="page1">
+<h1>💖 Our World 💖</h1>
 
-<div class="title">Happy Birthday</div>
-
-<div class="name">Adhu ❤️</div>
-
-<div class="subtitle">
-Every memory with you became my favorite place to live
+<div class="menu">
+<button onclick="openPage('adhu.html')">1. Adhu</button>
+<button onclick="openPage('childhood.html')">2. Childhood</button>
+<button onclick="openPage('travel.html')">3. Travel</button>
+<button onclick="openPage('us.html')">4. Us Together</button>
+<button onclick="openPage('loveletter.html')">5. Love Letter</button>
 </div>
 
-<div class="counter" id="counter">0</div>
-
-<div class="days">Days Together ❤️</div>
-
-<input type="date" id="datePicker">
-
-<button onclick="checkDate()">Unlock My Heart ❤️</button>
-
-</div>
-
-<!-- PAGE 2 -->
-<div id="page2" class="hidden">
-
-<div class="title">Welcome My Love ❤️</div>
-
-<div class="subtitle">
-This is our memory world ✨
-</div>
-
-<div class="quote">
-"You are my today and all of my tomorrows"
-</div>
-
-<div class="heart">❤️❤️❤️</div>
-
-</div>
-
-</div>
+<iframe id="viewer"></iframe>
 
 <script>
 
-// DAYS COUNTER
-const startDate = new Date("2024-09-30");
-const today = new Date();
+// start music on first interaction
+document.body.addEventListener("click", function(){
+document.getElementById("bgMusic").play();
+}, { once:true });
 
-const diff = today - startDate;
-const days = Math.floor(diff / (1000*60*60*24));
-
-document.getElementById("counter").innerHTML = days;
-
-// BUTTON FUNCTION
-function checkDate(){
-
-const audio = document.getElementById("bgMusic");
-audio.play(); // starts music
-
-const selected = document.getElementById("datePicker").value;
-
-if(selected === "2024-09-30"){
-
-// switch page instead of redirect
-document.getElementById("page1").classList.add("hidden");
-document.getElementById("page2").classList.remove("hidden");
-
-}
-else{
-alert("Wrong Date ❤️");
-}
-
+function openPage(page){
+document.getElementById("viewer").src = page;
 }
 
 </script>
