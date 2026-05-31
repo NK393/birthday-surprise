@@ -1,54 +1,25 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mine ❤️</title>
+<script>
+const gallery = document.getElementById("gallery");
 
-<style>
-body{
-    margin:0;
-    font-family: Arial, sans-serif;
-    background:#111;
-    color:white;
-    text-align:center;
+const totalImages = 36;
+const folder = "images/Adhu/";
+
+for(let i = 1; i <= totalImages; i++){
+
+    const div = document.createElement("div");
+    div.className = "photo";
+
+    const img = document.createElement("img");
+
+    img.src = folder + "image" + i + ".jpg";
+    img.loading = "lazy";
+    img.decoding = "async";
+
+    img.onload = () => {
+        img.classList.add("loaded");
+    };
+
+    div.appendChild(img);
+    gallery.appendChild(div);
 }
-
-h1{
-    margin:20px 0;
-    color:pink;
-}
-
-/* GRID */
-.gallery{
-    display:grid;
-    grid-template-columns:repeat(auto-fill, minmax(110px, 1fr));
-    gap:6px;
-    padding:10px;
-}
-
-/* PHOTO */
-.photo{
-    display:flex;
-}
-
-/* SQUARE IMAGE */
-.photo img{
-    width:100%;
-    aspect-ratio:1/1;
-    object-fit:cover;
-    display:block;
-    border-radius:10px;
-
-    filter:blur(6px);
-    transition:0.3s ease;
-}
-
-/* loaded effect */
-.photo img.loaded{
-    filter:blur(0);
-}
-
-/* hover effect */
-.photo img:hover{
-    transform
+</script>
