@@ -2,9 +2,7 @@
 <html>
 
 <head>
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Happy Birthday Adhu ❤️</title>
 
 <style>
@@ -14,31 +12,22 @@ background:linear-gradient(to bottom,#ffe6eb,#ffd1dc);
 font-family:Arial;
 text-align:center;
 padding-top:100px;
-margin:0;
 }
 
-h1{
-color:#ff3366;
-font-size:42px;
-}
-
-p{
-font-size:20px;
-padding:20px;
+input{
+padding:10px;
+font-size:18px;
+border-radius:10px;
 }
 
 button{
 background:#ff3366;
 color:white;
-padding:15px 30px;
+padding:15px 25px;
 border:none;
-border-radius:30px;
-font-size:20px;
-cursor:pointer;
-}
-
-button:hover{
-transform:scale(1.05);
+border-radius:20px;
+font-size:18px;
+margin-top:20px;
 }
 
 </style>
@@ -49,16 +38,39 @@ transform:scale(1.05);
 
 <h1>❤️ Happy Birthday Adhu ❤️</h1>
 
-<p>
-Every memory with you became my favorite place to live.
-</p>
+<p>Select our special date ❤️</p>
 
-<a href="menu.html">
-<button>
-Open My Heart ❤️
+<input type="date" id="datePicker">
+
+<br>
+
+<button onclick="checkDate()">
+Unlock My Heart ❤️
 </button>
-</a>
+
+<script>
+
+function checkDate(){
+
+let selected =
+document.getElementById("datePicker").value;
+
+if(selected==="2024-09-30"){
+
+window.location.href="menu.html";
+
+}
+else{
+
+alert("Wrong date my love ❤️");
+
+}
+
+}
+
+</script>
 
 </body>
 
 </html>
+
