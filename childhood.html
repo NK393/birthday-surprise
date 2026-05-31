@@ -1,8 +1,78 @@
-<!DOCTYPE html>
-<html>
+   <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kutti Adhi 🧸</title>
+
+<style>
+body{
+    margin:0;
+    font-family: Arial, sans-serif;
+    background:#1a1a1a;
+    color:white;
+    text-align:center;
+}
+
+h1{
+    margin:20px 0;
+    color:#ffd180;
+}
+
+/* GRID */
+.gallery{
+    display:grid;
+    grid-template-columns:repeat(auto-fill, minmax(120px, 1fr));
+    gap:6px;
+    padding:10px;
+}
+
+/* IMAGE */
+.gallery img{
+    width:100%;
+    aspect-ratio:1/1;
+    object-fit:cover;
+    border-radius:10px;
+    display:block;
+    transition:0.3s ease;
+}
+
+.gallery img:hover{
+    transform:scale(1.05);
+}
+
+/* NOTE */
+.quote{
+    margin:30px auto;
+    padding:15px;
+    max-width:700px;
+    font-size:18px;
+    color:#ffd180;
+    background:rgba(255,255,255,0.05);
+    border-radius:12px;
+    line-height:1.6;
+}
+</style>
+</head>
+
 <body>
 
-<h1>Coming Soon ❤️</h1>
+<h1>🧸 Kutty Adhi 🧸</h1>
+
+<div class="gallery">
+
+<!-- YOUR IMAGES -->
+<img src="images/childhood/IMG-20250111-WA0032.jpg">
+<img src="images/childhood/IMG-20250913-WA0109.jpg">
+<img src="images/childhood/IMG_20240610_225429_033.jpg">
+<img src="images/childhood/Screenshot_20240818_213109_Instagram.jpg
+<img src="images/childhood/IMG_20240610_225429_033.jpg">
+
+</div>
+
+<div class="quote">
+💛 Did that little boy ever know he would become my entire world?
+</div>
 
 </body>
 </html>
