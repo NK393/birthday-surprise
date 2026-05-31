@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,20 +16,19 @@ box-sizing:border-box;
 }
 
 body{
-
 background:
 linear-gradient(
-rgba(0,0,0,0.45),
+rgba(0,0,0,0.35),
 rgba(0,0,0,0.45)
 ),
-url('images/Background.jfif');
+url('images/Background.jpg');
 
 background-size:cover;
 background-position:center;
+background-repeat:no-repeat;
 background-attachment:fixed;
 
 font-family:Georgia, serif;
-
 min-height:100vh;
 
 display:flex;
@@ -38,14 +38,14 @@ align-items:center;
 padding:20px;
 }
 
-.glass{
+.glass-card{
 
 width:100%;
-max-width:500px;
+max-width:550px;
 
 background:rgba(255,255,255,0.12);
 
-backdrop-filter:blur(15px);
+backdrop-filter:blur(12px);
 
 border:1px solid rgba(255,255,255,0.2);
 
@@ -58,144 +58,109 @@ text-align:center;
 color:white;
 
 box-shadow:
-0 0 40px rgba(255,105,180,0.3);
-
-}
-
-h1{
-
-font-size:48px;
-
-margin-bottom:10px;
-
-text-shadow:0 0 15px pink;
-
-}
-
-.name{
-
-font-size:65px;
-
-font-style:italic;
-
-color:#ffd6e7;
-
-margin-bottom:20px;
-
-}
-
-.subtitle{
-
-font-size:20px;
-
-margin-bottom:25px;
-
-}
-
-.counter{
-
-font-size:70px;
-
-font-weight:bold;
-
-color:#ffd6e7;
-
-text-shadow:0 0 15px pink;
-
-}
-
-.days{
-
-font-size:22px;
-
-margin-bottom:25px;
-
-}
-
-input{
-
-width:100%;
-
-padding:15px;
-
-font-size:18px;
-
-border:none;
-
-border-radius:15px;
-
-margin-top:15px;
-
-}
-
-button{
-
-margin-top:20px;
-
-padding:15px 35px;
-
-border:none;
-
-border-radius:20px;
-
-background:#ff4f88;
-
-color:white;
-
-font-size:20px;
-
-cursor:pointer;
-
-box-shadow:0 0 20px #ff4f88;
-
-}
-
-button:hover{
-
-transform:scale(1.05);
-
-}
-
-.quote{
-
-margin-top:30px;
-
-font-size:22px;
-
-font-style:italic;
-
-color:#ffe5ef;
+0 0 40px rgba(255,105,180,0.35);
 
 }
 
 audio{
-
 width:100%;
-
 margin-bottom:20px;
+}
 
+.title{
+font-size:52px;
+color:#ffdbe8;
+text-shadow:0 0 15px #ff6b9d;
+}
+
+.name{
+font-size:70px;
+font-style:italic;
+margin-top:10px;
+margin-bottom:20px;
+color:white;
+text-shadow:0 0 20px #ff6b9d;
+}
+
+.subtitle{
+font-size:20px;
+margin-bottom:25px;
+}
+
+.counter{
+font-size:80px;
+font-weight:bold;
+color:#ffdbe8;
+text-shadow:0 0 15px #ff6b9d;
+}
+
+.days{
+font-size:24px;
+margin-bottom:25px;
+}
+
+.date-text{
+font-size:20px;
+margin-bottom:15px;
+}
+
+input{
+width:100%;
+padding:15px;
+font-size:18px;
+border:none;
+border-radius:15px;
+}
+
+button{
+margin-top:20px;
+padding:15px 40px;
+border:none;
+border-radius:20px;
+background:#ff4f88;
+color:white;
+font-size:20px;
+cursor:pointer;
+box-shadow:0 0 20px #ff4f88;
+}
+
+button:hover{
+transform:scale(1.05);
+}
+
+.quote{
+margin-top:30px;
+font-size:22px;
+font-style:italic;
+color:#ffe6ef;
+}
+
+.heart{
+font-size:40px;
+margin-top:20px;
 }
 
 </style>
-
 </head>
 
 <body>
 
-<div class="glass">
+<div class="glass-card">
 
 <audio id="bgMusic" controls loop>
 <source src="music/Un_Vizhigalil.mp3" type="audio/mpeg">
 </audio>
 
-<h1>Happy Birthday</h1>
+<div class="title">
+Happy Birthday
+</div>
 
 <div class="name">
 Adhu ❤️
 </div>
 
 <div class="subtitle">
-Every memory with you is my favorite place to live
+Every memory with you became my favorite place to live
 </div>
 
 <div id="counter" class="counter">
@@ -206,9 +171,9 @@ Every memory with you is my favorite place to live
 Days Together ❤️
 </div>
 
-<p>
-Choose the date our story began
-</p>
+<div class="date-text">
+Choose the date our story began ❤️
+</div>
 
 <input
 type="date"
@@ -220,6 +185,10 @@ Unlock My Heart ❤️
 
 <div class="quote">
 "You are my today and all of my tomorrows"
+</div>
+
+<div class="heart">
+❤️
 </div>
 
 </div>
@@ -236,18 +205,14 @@ const diff =
 today-startDate;
 
 const days =
-Math.floor(
-diff/(1000*60*60*24)
-);
+Math.floor(diff/(1000*60*60*24));
 
 document.getElementById("counter")
 .innerHTML = days;
 
 function checkDate(){
 
-document
-.getElementById("bgMusic")
-.play();
+document.getElementById("bgMusic").play();
 
 const selected =
 document.getElementById("datePicker").value;
@@ -269,3 +234,4 @@ alert("Wrong Date ❤️");
 
 </body>
 </html>
+```
