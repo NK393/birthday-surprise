@@ -1,76 +1,98 @@
+```html
 <!DOCTYPE html>
 <html>
 
 <head>
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Memory Vault ❤️</title>
 
 <style>
 
 body{
-background:#fff0f5;
-font-family:Arial;
-text-align:center;
-padding:20px;
 margin:0;
+padding:20px;
+font-family:Arial,sans-serif;
+background:linear-gradient(to bottom,#fff0f5,#ffd1dc);
+text-align:center;
+overflow-x:hidden;
 }
 
 h1{
 color:#ff3366;
 }
 
+.quote{
+font-size:18px;
+color:#555;
+margin-bottom:30px;
+}
+
 .card{
-
 background:white;
-
 padding:25px;
-
 margin:20px auto;
-
 width:90%;
-
 border-radius:25px;
-
 box-shadow:0 5px 15px rgba(0,0,0,0.15);
-
 }
 
 .card a{
-
 text-decoration:none;
-
 font-size:22px;
-
-color:#ff3366;
-
 font-weight:bold;
+color:#ff3366;
+}
 
+.heart{
+position:fixed;
+font-size:25px;
+animation:float 10s linear infinite;
+opacity:0.7;
+}
+
+@keyframes float{
+0%{
+transform:translateY(100vh);
+}
+100%{
+transform:translateY(-100px);
+}
+}
+
+audio{
+width:90%;
+margin-top:10px;
 }
 
 </style>
-
 </head>
 
 <body>
 
+<audio autoplay loop controls>
+<source src="music/Un_Vizhigalil.mp3" type="audio/mpeg">
+</audio>
+
 <h1>❤️ Memory Vault ❤️</h1>
 
-<div class="card">
-<a href="childhood.html">👶 Childhood Photos</a>
+<div class="quote">
+Every memory here is a piece of my heart ❤️
 </div>
 
 <div class="card">
-<a href="adhu.html">😍 Adhu</a>
+<a href="childhood.html">👶 Childhood Memories</a>
 </div>
 
 <div class="card">
-<a href="us.html">💕 Us Together</a>
+<a href="adhu.html">😍 My Favorite Person</a>
 </div>
 
 <div class="card">
-<a href="travel.html">✈️ Travel Memories</a>
+<a href="us.html">💕 Our Love Story</a>
+</div>
+
+<div class="card">
+<a href="travel.html">✈️ Our Adventures</a>
 </div>
 
 <div class="card">
@@ -78,9 +100,29 @@ font-weight:bold;
 </div>
 
 <div class="card">
-<a href="loveletter/loveletter.html">💌 Love Letter</a>
+<a href="loveletter/loveletter.html">💌 Secret Love Letter</a>
 </div>
 
-</body>
+<script>
 
+for(let i=0;i<25;i++){
+
+let heart=document.createElement("div");
+
+heart.innerHTML="❤️";
+
+heart.classList.add("heart");
+
+heart.style.left=Math.random()*100+"vw";
+
+heart.style.animationDelay=Math.random()*10+"s";
+
+document.body.appendChild(heart);
+
+}
+
+</script>
+
+</body>
 </html>
+```
