@@ -1,14 +1,161 @@
+```html
 <!DOCTYPE html>
 <html>
-
 <head>
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Happy Birthday Adhu ❤️</title>
 
 <style>
 
 body{
+margin:0;
+padding:0;
+font-family:Arial,sans-serif;
+text-align:center;
+overflow:hidden;
 background:linear-gradient(to bottom,#ffe6eb,#ffd1dc);
-font
+height:100vh;
+}
+
+.container{
+position:relative;
+z-index:10;
+padding-top:100px;
+}
+
+h1{
+color:#ff3366;
+font-size:42px;
+}
+
+p{
+font-size:20px;
+color:#444;
+}
+
+#counter{
+font-size:22px;
+font-weight:bold;
+color:#ff3366;
+margin:20px;
+}
+
+input{
+padding:12px;
+font-size:18px;
+border-radius:10px;
+border:none;
+}
+
+button{
+padding:15px 25px;
+font-size:18px;
+border:none;
+border-radius:25px;
+background:#ff3366;
+color:white;
+margin-top:20px;
+cursor:pointer;
+}
+
+.heart{
+position:fixed;
+font-size:25px;
+animation:float 10s linear infinite;
+opacity:0.7;
+}
+
+@keyframes float{
+0%{
+transform:translateY(100vh);
+}
+100%{
+transform:translateY(-100px);
+}
+}
+
+</style>
+</head>
+
+<body>
+
+<audio autoplay loop controls>
+<source src="music/Un_Vizhigalil.mp3" type="audio/mpeg">
+</audio>
+
+<div class="container">
+
+<h1>❤️ Happy Birthday Adhu ❤️</h1>
+
+<p>Choose the date our story began ❤️</p>
+
+<div id="counter"></div>
+
+<input type="date" id="datePicker">
+
+<br>
+
+<button onclick="checkDate()">
+Unlock My Heart ❤️
+</button>
+
+</div>
+
+<script>
+
+function checkDate(){
+
+let selected =
+document.getElementById("datePicker").value;
+
+if(selected==="2024-09-30"){
+
+window.location.href="menu.html";
+
+}else{
+
+alert("Wrong date my love ❤️");
+
+}
+
+}
+
+const startDate =
+new Date("2024-09-30");
+
+const today =
+new Date();
+
+const diff =
+today-startDate;
+
+const days =
+Math.floor(diff/(1000*60*60*24));
+
+document.getElementById("counter").innerHTML =
+"❤️ Together for " + days + " days ❤️";
+
+for(let i=0;i<25;i++){
+
+let heart =
+document.createElement("div");
+
+heart.innerHTML="❤️";
+
+heart.classList.add("heart");
+
+heart.style.left =
+Math.random()*100 + "vw";
+
+heart.style.animationDelay =
+Math.random()*10 + "s";
+
+document.body.appendChild(heart);
+
+}
+
+</script>
+
+</body>
+</html>
+```
