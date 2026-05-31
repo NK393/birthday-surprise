@@ -19,27 +19,41 @@ h1{
     color:pink;
 }
 
-/* IMAGE GRID */
+/* GRID */
 .gallery{
     display:grid;
-    grid-template-columns:repeat(auto-fit, minmax(150px, 1fr));
-    gap:8px;
+    grid-template-columns:repeat(auto-fit, minmax(140px, 1fr));
+    gap:6px;
     padding:10px;
 }
 
+/* IMAGE */
 .gallery img{
     width:100%;
-    height:200px;
+    height:190px;
     object-fit:cover;
     border-radius:12px;
-    transition:0.3s ease;
+
+    /* performance */
+    transform:translateZ(0);
+    will-change: transform;
+
+    /* loading effect */
+    filter:blur(8px);
+    transition:0.4s ease;
 }
 
+/* when loaded */
+.gallery img.loaded{
+    filter:blur(0);
+}
+
+/* hover */
 .gallery img:hover{
-    transform:scale(1.05);
+    transform:scale(1.03);
 }
 
-/* LOVE QUOTE */
+/* QUOTE */
 .quote{
     margin:25px auto;
     padding:15px;
@@ -59,48 +73,53 @@ h1{
 
 <div class="gallery">
 
-<!-- 30 images (image1.jpg to image30.jpg) -->
-<img src="images/us/image1.jpg">
-<img src="images/us/image2.JPG">
-<img src="images/us/image3.JPG">
-<img src="images/us/image4.JPG">
-<img src="images/us/image5.jpg">
-<img src="images/us/image6.jpg">
-<img src="images/us/image7.jpg">
-<img src="images/us/image8.jpg">
-<img src="images/us/image9.jpg">
-<img src="images/us/image10.JPG">
+<img src="images/us/image1.jpg" loading="lazy" decoding="async">
+<img src="images/us/image2.JPG" loading="lazy" decoding="async">
+<img src="images/us/image3.JPG" loading="lazy" decoding="async">
+<img src="images/us/image4.JPG" loading="lazy" decoding="async">
+<img src="images/us/image5.jpg" loading="lazy" decoding="async">
+<img src="images/us/image6.jpg" loading="lazy" decoding="async">
+<img src="images/us/image7.jpg" loading="lazy" decoding="async">
+<img src="images/us/image8.jpg" loading="lazy" decoding="async">
+<img src="images/us/image9.jpg" loading="lazy" decoding="async">
+<img src="images/us/image10.JPG" loading="lazy" decoding="async">
 
-<img src="images/us/image11.jpg">
-<img src="images/us/image12.jpg">
-<img src="images/us/image13.jpg">
-<img src="images/us/image14.jpg">
-<img src="images/us/image15.jpg">
-<img src="images/us/image16.jpg">
-<img src="images/us/image17.jpg">
-<img src="images/us/image18.jpg">
-<img src="images/us/image19.jpg">
-<img src="images/us/image20.jpg">
+<img src="images/us/image11.jpg" loading="lazy" decoding="async">
+<img src="images/us/image12.jpg" loading="lazy" decoding="async">
+<img src="images/us/image13.jpg" loading="lazy" decoding="async">
+<img src="images/us/image14.jpg" loading="lazy" decoding="async">
+<img src="images/us/image15.jpg" loading="lazy" decoding="async">
+<img src="images/us/image16.jpg" loading="lazy" decoding="async">
+<img src="images/us/image17.jpg" loading="lazy" decoding="async">
+<img src="images/us/image18.jpg" loading="lazy" decoding="async">
+<img src="images/us/image19.jpg" loading="lazy" decoding="async">
+<img src="images/us/image20.jpg" loading="lazy" decoding="async">
 
-<img src="images/us/image21.jpg">
-<img src="images/us/image22.jpg">
-<img src="images/us/image23.jpg">
-<img src="images/us/image24.jpg">
-<img src="images/us/image25.jpg">
-<img src="images/us/image26.jpg">
-<img src="images/us/image27.jpg">
-<img src="images/us/image28.jpg">
-<img src="images/us/image29.jpg">
-<img src="images/us/image30.jpg">
+<img src="images/us/image21.jpg" loading="lazy" decoding="async">
+<img src="images/us/image22.jpg" loading="lazy" decoding="async">
+<img src="images/us/image23.jpg" loading="lazy" decoding="async">
+<img src="images/us/image24.jpg" loading="lazy" decoding="async">
+<img src="images/us/image25.jpg" loading="lazy" decoding="async">
+<img src="images/us/image26.jpg" loading="lazy" decoding="async">
+<img src="images/us/image27.jpg" loading="lazy" decoding="async">
+<img src="images/us/image28.jpg" loading="lazy" decoding="async">
+<img src="images/us/image29.jpg" loading="lazy" decoding="async">
+<img src="images/us/image30.jpg" loading="lazy" decoding="async">
 
 </div>
 
-<!-- LOVE QUOTE BELOW -->
 <div class="quote">
 💌  
-Every picture here is not just a memory, but a piece of my heart, Where I have seen every shades of You! 
-
+Every picture here is not just a memory, but a piece of my heart, where I have seen every shade of you. ❤️
 </div>
+
+<script>
+document.querySelectorAll("img").forEach(img => {
+    img.addEventListener("load", () => {
+        img.classList.add("loaded");
+    });
+});
+</script>
 
 </body>
 </html>
