@@ -19,7 +19,7 @@ h1{
     color:pink;
 }
 
-/* GRID */
+/* GALLERY */
 .gallery{
     display:grid;
     grid-template-columns:repeat(auto-fit, minmax(150px, 1fr));
@@ -27,31 +27,37 @@ h1{
     padding:10px;
 }
 
-/* IMAGE CARD */
 .gallery img{
     width:100%;
     height:200px;
     object-fit:cover;
     border-radius:12px;
-
-    /* performance boost */
-    image-rendering:auto;
-    transform:translateZ(0);
-
-    /* smooth loading effect */
-    filter:blur(8px);
-    transition:0.5s ease;
+    filter:blur(6px);
+    transition:0.4s ease;
 }
 
-/* when loaded */
+/* when image loads */
 .gallery img.loaded{
     filter:blur(0);
-    transform:scale(1);
 }
 
 /* hover effect */
 .gallery img:hover{
     transform:scale(1.03);
+}
+
+/* NOTE SECTION */
+.note{
+    margin:20px;
+    padding:15px;
+    font-size:18px;
+    color:#ffb6c1;
+    background:rgba(255,255,255,0.05);
+    border-radius:10px;
+    max-width:600px;
+    margin-left:auto;
+    margin-right:auto;
+    line-height:1.5;
 }
 </style>
 </head>
@@ -87,8 +93,13 @@ h1{
 
 </div>
 
+<!-- NOTE -->
+<div class="note">
+💌 Every moment with you feels like a beautiful story I never want to end.  
+No matter where life goes, these memories will always stay close to my heart.
+</div>
+
 <script>
-/* removes blur only after image loads */
 document.querySelectorAll("img").forEach(img => {
     img.addEventListener("load", () => {
         img.classList.add("loaded");
