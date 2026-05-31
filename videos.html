@@ -15,32 +15,8 @@ body{
 }
 
 h1{
-    margin:20px 0 10px 0;
+    margin:20px 0;
     color:#ffcc80;
-}
-
-/* UPLOAD BUTTON */
-.upload-container {
-    margin: 20px auto;
-}
-.upload-btn {
-    display: inline-block;
-    padding: 12px 24px;
-    background: #ffcc80;
-    color: #111;
-    font-size: 16px;
-    font-weight: bold;
-    border-radius: 25px;
-    cursor: pointer;
-    transition: all 0.2s ease;
-    box-shadow: 0 4px 15px rgba(255, 204, 128, 0.2);
-}
-.upload-btn:hover {
-    background: #ffe0b2;
-    transform: scale(1.05);
-}
-input[type="file"] {
-    display: none;
 }
 
 /* GRID */
@@ -60,6 +36,7 @@ input[type="file"] {
     background:black;
 }
 
+/* VIDEO */
 .video-box video{
     width:100%;
     height:100%;
@@ -84,46 +61,74 @@ input[type="file"] {
 
 <h1>🎥 Memories 🎥</h1>
 
-<div class="upload-container">
-    <label for="video-upload" class="upload-btn">📂 Load All Videos</label>
-    <input type="file" id="video-upload" multiple accept="video/mp4,video/quicktime" />
-</div>
-
 <div class="gallery" id="gallery"></div>
 
 <div class="quote">
-💛 Every video is a memory captured in time ✨
+💛 Every memory stays here forever ✨
 </div>
 
 <script>
-const uploadInput = document.getElementById("video-upload");
 const gallery = document.getElementById("gallery");
 
-uploadInput.addEventListener("change", (event) => {
-    // Clear the gallery if files are re-selected
-    gallery.innerHTML = ""; 
+const folder = "videos/";
 
-    // Convert file list to an array and sort alphabetically by name
-    const files = Array.from(event.target.files);
-    files.sort((a, b) => a.name.localeCompare(b.name, undefined, {numeric: true, sensitivity: 'base'}));
+const videoFiles = [
+"Snapchat-1001146950.mp4",
+"Snapchat-1002190874.mp4",
+"Snapchat-101608792.mp4",
+"Snapchat-1098629231.mp4",
+"Snapchat-1173342661.mp4",
+"Snapchat-119422207.mp4",
+"Snapchat-1419801202.mp4",
+"Snapchat-1585137724.mp4",
+"Snapchat-1614636833.mp4",
+"Snapchat-1622430196.mp4",
+"Snapchat-1639399239.mp4",
+"Snapchat-1677696032.mp4",
+"Snapchat-1799171802.mp4",
+"Snapchat-1861700924.mp4",
+"Snapchat-190828685.mp4",
+"Snapchat-1928663272.mp4",
+"Snapchat-193174506.mp4",
+"Snapchat-1941128029.mp4",
+"Snapchat-1981405655.mp4",
+"Snapchat-1994641368.mp4",
+"Snapchat-2032276810.mp4",
+"Snapchat-207838568.mp4",
+"Snapchat-212389656.mp4",
+"Snapchat-391245348.mp4",
+"Snapchat-648076076.mp4",
+"Snapchat-662048646.mp4",
 
-    files.forEach(file => {
-        // Ensure it's actually a video file
-        if (!file.type.startsWith("video/")) return;
+"VID-20240730-WA0002.mp4",
+"VID-20241209-WA0014.mp4",
+"VID-20250216-WA0008.mp4",
+"VID-20250218_093816_057.mp4",
+"VID-20250315-WA0003.mp4",
+"VID-20250622-WA00088.mp4",
+"VID-20250902-WA0041.mp4",
+"VID-20250902-WA0047.mp4",
+"VID-20250902-WA0064.mp4",
+"VID-20250902-WA0080.mp4",
+"VID-20250902-WA0081.mp4",
+"VID-20250902-WA0083.mp4"
+];
 
-        const div = document.createElement("div");
-        div.className = "video-box";
+videoFiles.forEach(file => {
 
-        const video = document.createElement("video");
-        video.controls = true;
+    const div = document.createElement("div");
+    div.className = "video-box";
 
-        // Creates a temporary local URL for the file to play directly in browser
-        const videoURL = URL.createObjectURL(file);
-        video.src = videoURL;
+    const video = document.createElement("video");
+    video.controls = true;
+    video.src = folder + file;
 
-        div.appendChild(video);
-        gallery.appendChild(div);
-    });
+    video.onerror = () => {
+        div.style.display = "none";
+    };
+
+    div.appendChild(video);
+    gallery.appendChild(div);
 });
 </script>
 
