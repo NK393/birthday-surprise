@@ -1,88 +1,178 @@
-```html
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Happy Birthday Adhu ❤️</title>
 
 <style>
 
-body{
+*{
 margin:0;
 padding:0;
-font-family:Arial,sans-serif;
-background:linear-gradient(to bottom,#ffe6eb,#ffd1dc);
-overflow:hidden;
-height:100vh;
-text-align:center;
+box-sizing:border-box;
 }
 
-.container{
-position:relative;
-z-index:10;
-padding-top:80px;
+body{
+
+background:
+linear-gradient(
+rgba(0,0,0,0.45),
+rgba(0,0,0,0.45)
+),
+url('images/Background.jfif');
+
+background-size:cover;
+background-position:center;
+background-attachment:fixed;
+
+font-family:Georgia, serif;
+
+min-height:100vh;
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+padding:20px;
+}
+
+.glass{
+
+width:100%;
+max-width:500px;
+
+background:rgba(255,255,255,0.12);
+
+backdrop-filter:blur(15px);
+
+border:1px solid rgba(255,255,255,0.2);
+
+border-radius:30px;
+
+padding:35px;
+
+text-align:center;
+
+color:white;
+
+box-shadow:
+0 0 40px rgba(255,105,180,0.3);
+
 }
 
 h1{
-color:#ff3366;
-font-size:42px;
+
+font-size:48px;
+
 margin-bottom:10px;
+
+text-shadow:0 0 15px pink;
+
+}
+
+.name{
+
+font-size:65px;
+
+font-style:italic;
+
+color:#ffd6e7;
+
+margin-bottom:20px;
+
 }
 
 .subtitle{
+
 font-size:20px;
-color:#444;
-padding:10px;
+
+margin-bottom:25px;
+
 }
 
-#counter{
-font-size:22px;
+.counter{
+
+font-size:70px;
+
 font-weight:bold;
-color:#ff3366;
-margin:20px;
+
+color:#ffd6e7;
+
+text-shadow:0 0 15px pink;
+
+}
+
+.days{
+
+font-size:22px;
+
+margin-bottom:25px;
+
 }
 
 input{
-padding:12px;
+
+width:100%;
+
+padding:15px;
+
 font-size:18px;
+
 border:none;
-border-radius:10px;
+
+border-radius:15px;
+
+margin-top:15px;
+
 }
 
 button{
+
 margin-top:20px;
-padding:15px 30px;
-font-size:18px;
-background:#ff3366;
-color:white;
+
+padding:15px 35px;
+
 border:none;
-border-radius:25px;
+
+border-radius:20px;
+
+background:#ff4f88;
+
+color:white;
+
+font-size:20px;
+
 cursor:pointer;
+
+box-shadow:0 0 20px #ff4f88;
+
 }
 
 button:hover{
+
 transform:scale(1.05);
+
 }
 
-.heart{
-position:fixed;
-font-size:25px;
-animation:float 10s linear infinite;
-opacity:0.8;
+.quote{
+
+margin-top:30px;
+
+font-size:22px;
+
+font-style:italic;
+
+color:#ffe5ef;
+
 }
 
-@keyframes float{
+audio{
 
-0%{
-transform:translateY(100vh);
-}
+width:100%;
 
-100%{
-transform:translateY(-100px);
-}
+margin-bottom:20px;
 
 }
 
@@ -92,27 +182,45 @@ transform:translateY(-100px);
 
 <body>
 
-<audio id="bgMusic" loop>
+<div class="glass">
+
+<audio id="bgMusic" controls loop>
 <source src="music/Un_Vizhigalil.mp3" type="audio/mpeg">
 </audio>
 
-<div class="container">
+<h1>Happy Birthday</h1>
 
-<h1>❤️ Happy Birthday Adhu ❤️</h1>
-
-<div class="subtitle">
-Choose the date our story began ❤️
+<div class="name">
+Adhu ❤️
 </div>
 
-<div id="counter"></div>
+<div class="subtitle">
+Every memory with you is my favorite place to live
+</div>
 
-<input type="date" id="datePicker">
+<div id="counter" class="counter">
+0
+</div>
 
-<br>
+<div class="days">
+Days Together ❤️
+</div>
+
+<p>
+Choose the date our story began
+</p>
+
+<input
+type="date"
+id="datePicker">
 
 <button onclick="checkDate()">
 Unlock My Heart ❤️
 </button>
+
+<div class="quote">
+"You are my today and all of my tomorrows"
+</div>
 
 </div>
 
@@ -125,54 +233,33 @@ const today =
 new Date();
 
 const diff =
-today - startDate;
+today-startDate;
 
 const days =
-Math.floor(diff/(1000*60*60*24));
+Math.floor(
+diff/(1000*60*60*24)
+);
 
-document.getElementById("counter").innerHTML =
-"❤️ Together for " + days + " Days ❤️";
-
-for(let i=0;i<30;i++){
-
-let heart =
-document.createElement("div");
-
-heart.innerHTML = "❤️";
-
-heart.classList.add("heart");
-
-heart.style.left =
-Math.random()*100 + "vw";
-
-heart.style.animationDelay =
-Math.random()*10 + "s";
-
-document.body.appendChild(heart);
-
-}
+document.getElementById("counter")
+.innerHTML = days;
 
 function checkDate(){
 
-let music =
-document.getElementById("bgMusic");
+document
+.getElementById("bgMusic")
+.play();
 
-music.play();
-
-let selected =
+const selected =
 document.getElementById("datePicker").value;
 
 if(selected==="2024-09-30"){
 
-setTimeout(function(){
-
 window.location.href="menu.html";
 
-},1000);
+}
+else{
 
-}else{
-
-alert("Wrong date my love ❤️");
+alert("Wrong Date ❤️");
 
 }
 
@@ -181,6 +268,4 @@ alert("Wrong date my love ❤️");
 </script>
 
 </body>
-
 </html>
-```
